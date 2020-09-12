@@ -1,0 +1,33 @@
+<launch>
+	<arg name="node_type" default="circle_node"/>
+	<group>
+		<node pkg="pro_fleet" type="$(arg node_type)" name="square1" output="screen" ns="/drone1">
+			<param name="namespace" value="/drone1"/>
+			<param name="use_sim_time"  value="true" />
+			<param name="radius"  value="10" />
+
+		</node>
+	</group>
+
+	<group>
+		
+		<node pkg="pro_fleet" type="$(arg node_type)" name="square2" output="screen" ns="/drone2">
+			<param name="namespace" value="/drone2"/>
+			<param name="use_sim_time"  value="true" />
+			<param name="radius"  value="10" />
+		</node>
+	</group>
+	<group>	
+		<node pkg="pro_fleet" type="$(arg node_type)" name="square3" output="screen" ns="/drone3">
+			<param name="namespace" value="/drone3"/>
+			<param name="use_sim_time"  value="true" />
+			<param name="radius"  value="10" />
+		</node>
+	</group>
+	<!-- <group>	
+		<node pkg="pro_fleet" type="square_node" name="square4" output="screen" ns="/drone4">
+			<param name="namespace" value="/drone4"/>
+			<param name="use_sim_time"  value="true" />
+		</node>
+	</group> -->
+</launch>
